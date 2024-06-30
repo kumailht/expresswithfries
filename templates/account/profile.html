@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block body_class %}homepage{% endblock %}
+
+{% block body_content %}
+	<div class="brick auth copy-page">
+		<div class="wrap">
+			<h1>My Profile</h1>
+
+            <p>Please complete your profile to share your reading list publicly.</p>
+
+            {% if success %}
+                <p class="success">{{ success }}</p>
+            {% endif %}
+
+			{% if errors %}
+				{% for error in errors %}
+					  <p class="error">{{ error }}</p>
+				{% endfor %}
+			{% endif %}
+
+            <br>
+
+            <form method="post">
+                <h3>Pick a username</h3>
+
+                <div class="split">
+                    <div>
+                        <label>username*</label>
+                        <input name="username" type="text" autocomplete="off" required value="{{ username if username else user.username }}"><br>
+                    </div>
+                </div>
+                
+
+                <h3>About you</h3>
+                <div class="split">
+                    <div>
+                        <label>first name*</label>
+                        <input name="first_name" type="text" autocomplete="off" value="{{ first_name if first_name else user.first_name }}"><br>
+                    </div>
+                    <div>
+                        <label>last name*</label>
+                        <input name="last_name" type="text" autocomplete="off" value="{{ last_name if last_name else user.last_name }}"><br>
+                    </div>
+                </div>
+
+                <label>About me</label>
+                <textarea name="about" id="" cols="80" rows="5" maxlength="240">{{ about if about else user.about }}</textarea>
+
+                <br><br>
+
+                <h3>Social links</h3>
+                <div class="split">
+                    <div>
+                        <label>twitter</label>
+                        <input name="twitter" type="url" autocomplete="off" value="{{ twitter if twitter else user.twitter }}"><br>
+                    </div>
+                    <div>
+                        <label>website</label>
+                        <input name="website" type="url" autocomplete="off"  value="{{ website if website else user.website }}"><br>
+                    </div>
+                </div>
+
+                <br>
+
+                <button type="submit">update public profile</button>
+            </form>
+		</div>
+	</div>
+{% endblock %}

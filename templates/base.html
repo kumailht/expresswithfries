@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/css/tailwind-min.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+
+        <link type="image/png" sizes="16x16" rel="icon" href="/img/favicon.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <title>
+            {% block title %}Express.js with authentication and more.. a boilerplate{% endblock %} &bull;ExpressWithFries.com
+        </title>
+
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <script>
+            const isAuthenticated = {% if isAuthenticated %}true{% else %} false{% endif %};
+        </script>
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% block body %}
+        <div class="brick header sm:pb-6">
+            <div class="wrap">
+                <div class="lg:flex lg:absolute top-0 right-0 text-[14px]">
+                    {% if isAuthenticated %}
+                    <a class="flex p-2" href="/dashboard/">
+                        <i data-feather="user" stroke-width="2" width="16px" height="16px"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a class="flex p-2" href="/account/logout/">
+                        <i data-feather="log-out" stroke-width="2" width="16px" height="16px"></i>
+                        <span>Logout</span>
+                    </a>
+                    {% else %}
+                    <a class="flex p-2" href="/account/login/">
+                        <i data-feather="log-in" stroke-width="2" width="16px" height="16px"></i>
+                        <span>Login</span>
+                    </a>
+                    <a class="flex p-2" href="/account/signup/">
+                        <i data-feather="user" stroke-width="2" width="16px" height="16px"></i>
+                        <span>Signup</span>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <a href="/">Express with fries</a>
+            </div>
+            <script type="text/javascript">
+                (function () {
+                    const currentLink = window.location.pathname;
+                    const pages = document.querySelectorAll('nav a');
+
+                    pages.forEach((page) => {
+                        const link = page.getAttribute('href');
+                        const section = page.getAttribute('data-nav');
+
+                        // Select nav item if HREF matches current URL
+                        if (currentLink === link) {
+                            page.classList.add('selected');
+                            return;
+                        }
+                    });
+                })();
+            </script>
+        </div>
+
+        {% block body_content %}
+        {% endblock %}
+
+        {% endblock %}
+
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+        <script>
+            feather.replace();
+        </script>
+
+        {% if not PRODUCTION %}
+            <script type="text/javascript" src="https://livejs.com/live.js"></script>
+        {% endif %}
+    </body>
+</html>

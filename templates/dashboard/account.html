@@ -1,0 +1,50 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Account{% endblock %}
+{% block nav_selected %}{% endblock %}
+
+{% block body_content %}
+
+<h1 class="text-3xl font-light mt-12">My Account</h1>
+<p class="text-slate-600 mt-4 mb-12">
+    View your account details below.
+</p>
+
+<div>
+    <div class="mt-6 border-t border-slate-100">
+        <dl class="divide-y divide-slate-100">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                <dt class="text-md font-medium leading-6 text-slate-900">Your email</dt>
+                <dd class="mt-1 text-md leading-6 text-slate-700 sm:col-span-2 sm:mt-0">{{ user.email }}</dd>
+            </div>
+            <!-- <div class="px-4 py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                <dt class="text-md font-medium leading-6 text-slate-900">Current Plan</dt>
+                <dd class="mt-1 text-md leading-6 text-slate-700 sm:col-span-2 sm:mt-0">
+                    {% if user.active_subscription %}
+                    <p>You are subscribed to the <b>Analyst plan</b>. ({{user.active_subscription}})</p>
+                    {% else %}
+                    <p>You are not subscribed to any plan. <a class="text-blue-600 underline" href="/pricing/">Subscribe
+                            now</a></p>
+                    {% endif %}
+                </dd>
+            </div> -->
+            <div class="px-4 py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                <dt class="text-md font-medium leading-6 text-slate-900">Get Support</dt>
+                <dd class="mt-1 text-md leading-6 text-slate-700 sm:col-span-2 sm:mt-0">
+                    <p>For questions, technical support, feature requests or account related issues, please
+                        reach out on <a class="text-blue-600 underline"
+                            href="mailto:contact@borderline.biz">contact@borderline.biz</a>.</p>
+                </dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                <dt class="text-md font-medium leading-6 text-slate-900">&nbsp;</dt>
+                <dd class="mt-1 text-md leading-6 text-slate-700 sm:col-span-2 sm:mt-0">
+                    <i data-feather="log-out" class="w-4 h-4 mr-2 inline-block text-blue-500"></i>
+                    <a class="text-blue-500 underline" href="/account/logout/">Log Out</a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="brick">
+	<div class="wrap flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+		<div class="sm:mx-auto sm:w-full sm:max-w-sm">
+			<h2 class="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-slate-900">Your email is
+				verified!</h2>
+
+			{% if user.hash %}
+				<p class="mt-10 text-center text-lg mx-auto">
+					Please
+					<a href="/account/login/"
+						class="font-semibold leading-6 underline text-blue-600 hover:text-blue-500">Log In</a> to
+					continue.
+				</p>
+			{% endif %}
+		</div>
+
+	</div>
+</div>
+{% endblock %}

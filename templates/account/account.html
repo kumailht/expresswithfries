@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body_class %}homepage{% endblock %}
+
+{% block body_content %}
+	<div class="brick auth">
+		<div class="wrap">
+			<h1>My Account</h1>
+			<p>Status: Logged In</p>
+			<a href="/account/profile">My Profile</a>
+			<a href="/account/change">Change password</a>
+			<a href="/account/logout">Log out</a>
+			{{ user.email}}
+		</div>
+	</div>
+{% endblock %}

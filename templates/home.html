@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div class="mx-auto max-w-2xl p-4">
+    <div class="flex flex-col items-center justify-center">
+        <a href="/">
+            <img src="/img/logo.png" alt="Express with fries" width="260px" />
+        </a>
+        <!-- <p class="text-center mt-3 mb-8">
+            A bootstrap kit for Express.js,<br> with authentication, tailwind, email and more!
+        </p> -->
+        <button class="bg-blue-100 p-4 rounded-lg font-bold underline text-xl text-blue-700 hover:bg-blue-200 inline-flex items-center gap-2">
+            <i data-feather="download" stroke-width="3"></i>
+            Get the bootstrap
+        </button>
+        <!-- <p class="mt-3"><strike class="font-bold">USD 99</strike> &nbsp; USD 49 for a limited time only</p> -->
+        <p class="mt-3"><strike class="font-bold">USD 99</strike> &nbsp; USD 49 for a limited time only</p>
+    </div>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
+
+    <div class="mt-24 text-2xl leading-relaxed tracking-tight" style="font-family: 'LXGW WenKai TC'">
+        <h3 class="uppercase tracking-wide text-lg">Why I love Express</h3>
+        <p class="font-bold mb-6">Express is the most reliable, beautiful thing in the JavaScript world.</p>
+        <p class="mb-6">It is so ubiquitous, almost every tech giant from Netflix to Nasa makes use of it at some level
+            of their stack.</p>
+        <p class="mb-6">I’ve been using it for over 7+ years and have built and operated many projects with it,
+            including Borderline.biz and BoredReading.com. To me, Express is the Toyota Corolla of JS Frameworks. It’s
+            boring, never really changes, it’s just kinda there, day after day, it does what it says on the box... and
+            just keeps chugging along, like a champ, without fail.</p>
+        <p class="mb-6">I love express. I really do. ❤️ </p>
+        <p class="mb-6">But Express can also be daunting to start out with. I mean, it’s only a server side framework
+            that doesn’t come with a whole lot. A bit like a Toyota Engine, but you gotta bring the rest of the car. And
+            that kinda sucks.</p>
+        <p class="mb-6">It took me years of fiddling to develop my own authentication, admin system, templating
+            structure, email sending, utility functions, cronjobs, migrations, and so on. Sometimes I’d set stuff up one
+            way, only to realize months later that it won’t work with new edge cases. But now, after a decade of
+            building with Express, I love I’ve got it working like a fine-tuned engine. This is my unfair un-advantage.
+        </p>
+        <p class="mb-6">This boilerplate has been tried and tested on several websites over many years. It’s a
+            culmination of everything I learned at the companies I worked at like Dubizzle, McKinsey & Company and
+            Broadly. Bringing together best practices, learnings and solutions into one neat package.</p>
+        <p class="mb-6">And now, for the first time ever, I’m making it available for download, so you can unfairly
+            kickstart your next project and launch new software as quickly as I can.</p>
+    </div>
+
+    <div class="mt-24 text-xl leading-relaxed tracking-tight" style="font-family: 'LXGW WenKai TC'">
+        <h3 class="text-4xl mb-12">Frequently Asked Questions</h3>
+        <p class="font-bold mb-6">What is Express?</p>
+        <p class="mb-6">Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+        
+        <p class="font-bold mb-6">How is Express different from React/Next/Angular/etc?</p>
+        <p class="mb-6">Express renders HTML on the backend using templates and serves it to the frontend. It’s a different paradigm to React, where a large portion of the DOM is rendered on the client.</p>
+        <p class="mb-6">In simpler terms, if you’re application has a lot of pages/navigational complexities, you might find Express solves those problems better. For instance, if you were making a CRM, Job board, Ecommerce platform, you might find Express works really well.</p>
+        <p class="mb-6"> However, if you have very few pages, and most of your app is very reactive and updates instantly on the DOM based on user input, you should look into other boilerplates that use React. For example, if you’re building the next Gmail or WhatApp, you’ll need the live reactivity of React.</p>
+    </div>
+</div>
+{% endblock %}

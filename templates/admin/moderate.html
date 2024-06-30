@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.ico" />
+
+    <title>Borderline</title>
+</head>
+
+<body class="moderate">
+    <header class="site-header">
+        <a href="/"><img src="/img/logo.svg" alt="Borderline Logo" width="142px" class="logo" /></a>
+    </header>
+
+    <div style="position: absolute; top: 30px; right: 30px; display: flex; gap: 10px;">
+        <div style="margin-right: 30px;">
+            <a href="/moderate/subs">Subscriptions</a>
+        </div>
+
+        <form class="confirm-click" method="post" action="/moderate/delete_all_unapproved">
+            <input type="submit" name="delete_all_unapproved" value="DELETE ALL PENDING" />
+        </form>
+
+        <form class="confirm-click" method="post" action="/moderate/send_checkup_email">
+            <input type="submit" name="send_checkup_email" value="SEND CHECKUP EMAIL" />
+        </form>
+
+        <form class="confirm-click" method="post" action="/moderate/send_feature_email">
+            <input type="submit" name="send_feature_email" value="SEND FEATURE EMAIL" />
+        </form>
+
+        <script>
+            // confirm before allowing click
+            document.querySelectorAll('.confirm-click').forEach(function (form) {
+                form.addEventListener('submit', function (e) {
+                    if (!confirm('Are you sure?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        </script>
+    </div>
+
+    <h3>Pending Listings</h3>
+    <ol class="project-list">
+        {% for listing in listings %} {% if not listing.approved %}
+        <li>
+            {% include "./_listing.html" %}
+
+            <div class="actions">
+                <form method="post" action="/moderate/{{ listing._id }}/reject/">
+                    <input type="text" name="reason">
+                    <input type="submit" name="reject" value="reject [{% if listing.rejectCount %}{{ listing.rejectCount }}{% else %}0{% endif %}]" />
+                </form>
+<!-- 
+                <form method="post" action="/moderate/{{ listing._id }}/sendConfirmation">
+                    <input type="submit" name="sendConfirmation"
+                        value="send confirmation [{% if listing.confirmationsSent %}{{ listing.confirmationsSent }}{% else %}0{% endif %}]" />
+                </form> -->
+
+                <form method="post" action="/moderate/{{ listing._id }}/fetchScreenshot">
+                    <input type="submit" name="refreshScreenshot" value="refresh screenshot" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/approve">
+                    <input type="submit" name="approve" value="approve" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/delete">
+                    <input type="submit" name="delete" value="delete" />
+                </form>
+
+                <a style="display: block; margin-top: 10px" target="_blank" href="/moderate/preview_email/{{ listing._id }}">preview email</a>
+
+                <form method="post" action="/moderate/{{ listing._id }}/sendEmails">
+                    <input type="submit" name="send emails" value="send emails [{% if listing.emailsSent %}{{ listing.emailsSent }}{% else %}0{% endif %}]" />
+                </form>
+            </div>
+        </li>
+        {% endif %} {% endfor %}
+    </ol>
+
+    <h3>Approved Listings</h3>
+    <ol class="project-list">
+        {% for listing in listings %} {% if listing.approved %}
+        <li>
+            {% include "./_listing.html" %}
+
+            <div class="actions">
+                <form method="post" action="/moderate/{{ listing._id }}/unapprove">
+                    <input type="submit" name="unapprove" value="unapprove" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/delete">
+                    <input type="submit" name="delete" value="delete" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/sold">
+                    <input type="submit" name="sold" value="sold" />
+                </form>
+                <form method="post" action="/moderate/{{ listing._id }}/fetchScreenshot">
+                    <input type="submit" name="refreshScreenshot" value="refresh screenshot" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/tweet">
+                    <input type="submit" name="tweet" value="Tweet" />
+                </form>
+
+                <form method="post" action="/moderate/{{ listing._id }}/feature-listing">
+                    <input type="submit" name="feature" value="{% if listing.featuredListing %}[FEATURED]{% else %}Feature{% endif %}" />
+                </form>
+
+                <a style="display: block; margin-top: 10px" target="_blank" href="/moderate/preview_email/{{ listing._id }}">preview email</a>
+
+                <form method="post" action="/moderate/{{ listing._id }}/sendEmails">
+                    <input type="submit" name="send emails" value="send emails [{% if listing.emailsSent %}{{ listing.emailsSent }}{% else %}0{% endif %}]" />
+                </form>
+            </div>
+        </li>
+        {% endif %} {% endfor %}
+    </ol>
+</body>
+
+</html>
+
+<script></script>

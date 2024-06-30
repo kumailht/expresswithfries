@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block body_class %}{% endblock %}
+
+{% block body_content %}
+<!-- <div class="brick auth">
+		<div class="wrap">
+			<h1>Reset password</h1>
+		
+			{% if status === "success" %}
+				<p>Password reset successfully. <a href="/account/login">Login</a></p>
+			{% else %}
+				{% if errors %}
+					{% for error in errors %}
+						  <p>{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+		
+				<form method="post">
+					<label>password</label><input name="password" type="password" autocomplete="off" required><br>
+					<label>password (repeat)</label><input name="repeat_password" type="password" autocomplete="off" required><br>
+		
+					<button type="submit">change password</button>
+				</form>
+			{% endif %}
+		
+			<a href="/account/signup">Create account</a>
+			<a href="/account/forgot">Forgot Password</a>
+		</div>
+	</div> -->
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+	<div class="sm:mx-auto sm:w-full sm:max-w-sm">
+		<h2 class="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-slate-900">Reset Password</h2>
+	</div>
+
+	<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+		{% if status === "success" %}
+		<p>Password reset successfully. <a href="/account/login">Login</a></p>
+		{% else %}
+		{% if errors %}
+		{% for error in errors %}
+		<div class="bg-red-50 border border-red-200 rounded-md p-4 mb-10" role="alert">
+			<div class="flex">
+				<div class="flex-shrink-0">
+					<svg class="h-4 w-4 text-red-400 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" viewBox="0 0 16 16">
+						<path
+							d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+					</svg>
+				</div>
+				<div class="ml-4">
+					<h3 class="text-sm text-red-800 font-semibold">
+						{{ error }}
+					</h3>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		{% endif %}
+		<form class="space-y-6" method="POST">
+
+
+			<div>
+				<div class="flex items-center justify-between">
+					<label for="password" class="brick text-sm font-medium leading-6 text-slate-900">Password</label>
+				</div>
+				<div class="mt-2">
+					<input id="password" name="password" type="password" autocomplete="current-password" required
+						class="brick w-full rounded-md border-0 py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6">
+				</div>
+			</div>
+
+			<div>
+				<div class="flex items-center justify-between">
+					<label for="repeat_password" class="brick text-sm font-medium leading-6 text-slate-900">Repeat
+						Password</label>
+				</div>
+				<div class="mt-2">
+					<input id="repeat_password" name="repeat_password" type="password" autocomplete="current-password"
+						required
+						class="brick w-full rounded-md border-0 py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6">
+				</div>
+			</div>
+
+			<div>
+				<button type="submit"
+					class="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Change
+					Password</button>
+			</div>
+		</form>
+
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}

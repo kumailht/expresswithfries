@@ -1,0 +1,6 @@
+node_modules
+.sass-cache
+ngrok
+.DS_Store
+.sqlite
+storage/*.sqlite

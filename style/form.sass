@@ -1,0 +1,68 @@
+@import "utils"
+
+form.super-slick-form
+  +desktop
+    max-width: 630px
+  h3
+    margin-top: 40px
+  h3 + label
+    margin-top: 0px
+  label
+    color: $darkBlue
+    font-size: 16px
+    display: block
+    margin-bottom: 7px
+    margin-top: 30px
+    &:hover
+      cursor: pointer
+  input[type=text], input[type=email], input[type=url], input[type=number], textarea
+    border-radius: 5px
+    background: $lighterBlue
+    color: $darkBlue
+    padding: 12px
+    font-size: 16px
+    border: none
+    font-family: $SANS_SERIF
+    width: calc(100% + 12px)
+    position: relative
+    left: -12px
+    &:focus
+      background-color: darken($lighterBlue, 2%)
+      border: none
+      outline: none
+  button
+    font-family: $SANS_SERIF
+    background-color: $darkBlue
+    border-radius: 2px
+    font-size: 20px
+    padding: 15px 20px
+    font-weight: 400
+    border: none
+    color: white
+    margin-top: 30px
+    &:hover
+      background: darken($darkBlue, 5%)
+      cursor: pointer
+  .field:focus-within
+    label
+      color: $darkBlue
+  .group
+    +desktop
+      display: flex
+      justify-content: space-between
+      .field
+        flex: 1
+        &:first-child
+          margin-right: 15px
+        &:last-child
+          margin-left: 15px
+  .field-set
+    +desktop
+      padding: 30px 30px 30px 50px
+      width: 110%
+      margin-left: -55px
+      border: 1px solid #C9EFFF
+      border-left: 5px solid darken(#C9EFFF, 5%)
+      .field:first-child
+        label
+          margin-top: 0

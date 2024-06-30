@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+
+  <head>
+    <title>Admin</title>
+
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="/css/_adm.css" />
+  </head>
+
+  <body>
+    <div class="flakes-frame">
+      <div class="flakes-navigation">
+        <a href="/adm/" class="logo">
+          borderline
+        </a>
+
+        <ul>
+          <li><a href="/adm/">Home</a></li>
+        </ul>
+
+        <ul>
+          <li>SESSIONS: {{sessionCount}}</li>
+        </ul>
+
+        <p class="foot">
+            <b>{{ user.email }}</b><br />
+            <a href="/account">My Account</a> &bullet; <a href="/logout">Logout</a>
+        </p>
+      </div>
+
+      <div class="flakes-content">
+        <div class="flakes-mobile-top-bar">
+          <a href="" class="logo-wrap">
+            <img src="/img/logo.svg" height="30px" />
+          </a>
+
+          <a href="" class="navigation-expand-target">
+            <img
+              src="/adm/img/site-wide/navigation-expand-target.png"
+              height="26px"
+            />
+          </a>
+        </div>
+
+        <div class="view-wrap">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

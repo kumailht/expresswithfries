@@ -1,0 +1,51 @@
+$SANS_SERIF: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,sans-serif
+$SERIF: 'PT Serif', serif
+$MONO: 'Nova Mono', Monaco, monospace
+  
+$MAX_WIDTH: 1024px
+$MOBILE_BREAK: 600px
+
+// Colors
+$lighterGray: #eceef1
+$lightGray: #d1d5dc
+$lighterBlue: #f4f8ff
+$darkBlue: #23354e
+
+
+html
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  box-sizing: border-box
+  *, *:before, *:after
+    box-sizing: inherit
+
+html, body
+  margin: 0
+
+=breakpoints($min, $max: false)
+  @if $max == false
+    @media only screen and (min-width: $min)
+      @content
+  @else
+    @media only screen and (min-width: $min) and (max-width: $max)
+      @content
+
+=mobile
+  +breakpoints(0, $MOBILE_BREAK)
+    @content
+
+=tablet
+  +breakpoints($MOBILE_BREAK, $MAX_WIDTH)
+    @content
+
+=desktop
+  +breakpoints($MAX_WIDTH)
+    @content
+
+@media only screen and (min-width: ($MOBILE_BREAK))
+  .mobile
+    display: none !important
+
+@media only screen and (max-width: $MOBILE_BREAK)
+  .desktop
+    display: none !important

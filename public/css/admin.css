@@ -1,0 +1,441 @@
+h1, h2, h3, h4, h5, h6, p, li, dd, dt, table, tr, td, blockquote, q, em {
+  line-height: 1.35;
+}
+
+a {
+  color: #0066FF;
+}
+a:hover {
+  color: #0052cc;
+}
+a:active {
+  color: #003d99;
+}
+
+html {
+  font: 10px/1.35 sans-serif;
+  box-sizing: border-box;
+  background-color: #FEFEFE;
+  color: #333;
+}
+html *, html *:before, html *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 40px auto;
+  padding: 0 30px;
+  font-size: 1.6rem;
+}
+
+header.site-header {
+  text-align: center;
+}
+header.site-header .tagline {
+  font: normal 1.3rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+}
+header.site-header .tagline em {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+header.site-header .logo {
+  margin: 40px 0;
+}
+
+footer {
+  max-width: 490px;
+  color: #aaa;
+  margin: 100px auto;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.website-preview {
+  margin-bottom: 5px;
+  border: 3px solid #f0f0f0;
+  border-top: 12px solid #f0f0f0;
+  border-radius: 2px;
+  position: relative;
+  height: max-content;
+}
+.website-preview .buttons span {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: -8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+}
+.website-preview .buttons span:nth-child(1) {
+  background: #FFD0D0;
+  left: 3px;
+}
+.website-preview .buttons span:nth-child(2) {
+  background: #F5DC57;
+  left: 13px;
+}
+.website-preview .buttons span:nth-child(3) {
+  background: #B3F0A9;
+  left: 23px;
+}
+.website-preview .screenshot {
+  line-height: 0;
+  overflow-y: scroll;
+  max-height: 300px;
+}
+.website-preview .screenshot img {
+  width: 100%;
+}
+
+.project-list {
+  margin: 60px auto;
+  text-align: left;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-list li {
+  font-size: 1.6rem;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+  background: #eef5ff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.project-list li p:last-child {
+  margin-bottom: 0;
+}
+.project-list li p.ask {
+  font-family: monospace;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #888;
+}
+.project-list li h5 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+.project-list li h5 .sold {
+  background: #f6517b;
+  color: white;
+  font-size: 1.1rem;
+  padding: 3px 11px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-weight: normal;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.project-list li h5 a.title {
+  color: #0066FF;
+  text-decoration: none;
+  border-bottom: 3px double #77adff;
+}
+.project-list li h5 a.title:hover {
+  color: #0052cc;
+}
+.project-list li h5 a.email-owner {
+  background: white;
+  color: #66a3ff;
+  font-size: 1.1rem;
+  padding: 2px 10px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-weight: normal;
+  text-decoration: none;
+  border: 1px solid #ddeaff;
+}
+.project-list li h5 a.email-owner:hover {
+  border: 1px solid #bbd6ff;
+}
+.project-list li h5 a.email-owner:active {
+  background: #004bbb;
+  border-color: #004bbb;
+  color: white;
+}
+
+body.homepage {
+  text-align: center;
+}
+body.homepage .about {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 2.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+body.homepage .sell-your-project-cta {
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+body.homepage .sell-your-project-cta a {
+  display: inline-block;
+  line-height: 1.2;
+  background-color: #0066FF;
+  padding: 10px 40px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  text-align: center;
+  border: 7px solid #D5E5FF;
+  box-shadow: inset 0px -1px 0px 0px #0044AA;
+}
+body.homepage .sell-your-project-cta a:hover {
+  background-color: #0064fa;
+  box-shadow: inset 0px -2px 0px 0px #0044AA;
+}
+body.homepage .sell-your-project-cta a:active {
+  background-color: #0060f0;
+  box-shadow: inset 0px 1px 0px 0px #0044AA;
+}
+body.homepage .limited-time {
+  font-size: 1.3rem;
+  color: #B3B3B3;
+  margin-top: 0;
+}
+body.homepage .projects-for-sale {
+  margin-top: 60px;
+}
+body.homepage .projects-for-sale header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  body.homepage .projects-for-sale header {
+    display: block;
+  }
+  body.homepage .projects-for-sale header .diamond-left, body.homepage .projects-for-sale header .diamond-right {
+    display: none;
+  }
+}
+body.homepage .projects-for-sale .disclaimer {
+  max-width: 490px;
+  margin: 50px auto 20px auto;
+  text-align: left;
+  font-size: 1.6rem;
+  padding: 20px;
+  background: #ffc3c3;
+  border: 1px solid #ff9090;
+  border-radius: 3px;
+}
+body.homepage .projects-for-sale .project-list {
+  max-width: 490px;
+  margin: 30px auto 60px auto;
+  text-align: left;
+  padding: 0;
+  list-style: none;
+}
+body.homepage .projects-for-sale .project-list li {
+  font-size: 1.6rem;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #eef5ff;
+  border-bottom: 1px solid #e6e6e6;
+}
+body.homepage .projects-for-sale .project-list li p:last-child {
+  margin-bottom: 0;
+}
+body.homepage .projects-for-sale .project-list li p.ask {
+  font-family: monospace;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #888;
+}
+body.homepage .projects-for-sale .project-list li h5 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+body.homepage .projects-for-sale .project-list li h5 a.title {
+  color: #0066FF;
+  text-decoration: none;
+  border-bottom: 3px double #77adff;
+}
+body.homepage .projects-for-sale .project-list li h5 a.title:hover {
+  color: #0052cc;
+}
+body.homepage .projects-for-sale .project-list li h5 a.email-owner {
+  background: white;
+  color: #66a3ff;
+  font-size: 1.1rem;
+  padding: 2px 10px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-weight: normal;
+  text-decoration: none;
+  border: 1px solid #ddeaff;
+}
+body.homepage .projects-for-sale .project-list li h5 a.email-owner:hover {
+  border: 1px solid #bbd6ff;
+}
+body.homepage .projects-for-sale .project-list li h5 a.email-owner:active {
+  background: #004bbb;
+  border-color: #004bbb;
+  color: white;
+}
+body.homepage .email-alerts {
+  max-width: 490px;
+  margin: 60px auto 80px auto;
+  font-size: 1.6rem;
+}
+body.homepage .email-alerts label {
+  font-weight: bold;
+}
+body.homepage .email-alerts p {
+  margin-top: 0;
+  color: #808080;
+  font-style: italic;
+}
+body.homepage .email-alerts .wrap {
+  margin-top: 10px;
+  display: flex;
+}
+body.homepage .email-alerts input[type=email] {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 10px;
+  background: #FEF7E0;
+  color: #AA8800;
+  border: none;
+  border-bottom: 1px solid #C8AB37;
+  margin-right: 4px;
+}
+body.homepage .email-alerts input[type=email]:focus {
+  outline: none;
+}
+body.homepage .email-alerts input[type=submit] {
+  color: #777;
+  background: #eee;
+  border: 4px solid #ddd;
+  font-size: 1.4rem;
+  padding: 0 15px;
+}
+body.homepage .email-alerts input[type=submit]:hover {
+  color: #888;
+  cursor: pointer;
+  background: #ddd;
+  border-color: #d5d5d5;
+  border-width: 6px;
+  padding: 0 13px;
+}
+body.homepage .email-alerts input[type=submit]:focus {
+  outline: none;
+}
+body.homepage .email-alerts input[type=submit]:active {
+  color: #aaa;
+  background: #ccc;
+  border-width: 4px;
+  border-color: #bbb;
+  padding: 0 15px;
+  outline: none;
+}
+body.homepage .email-alerts .success {
+  background-color: #adec95;
+  color: #21510f;
+  padding: 5px 10px;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+body.sell-your-project {
+  text-align: center;
+}
+body.sell-your-project .about {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 2.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+body.sell-your-project form {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #333;
+  font-size: 1.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-top: 50px;
+}
+body.sell-your-project form input, body.sell-your-project form textarea {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+body.sell-your-project form label {
+  display: block;
+  font-weight: 500;
+  margin: 40px 0 5px;
+}
+body.sell-your-project form textarea, body.sell-your-project form input[type=text], body.sell-your-project form input[type=email], body.sell-your-project form input[type=url] {
+  width: 100%;
+  border: none;
+  background: #F2F2F2;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 10px;
+  border-radius: 2px;
+}
+body.sell-your-project form textarea:focus, body.sell-your-project form input[type=text]:focus, body.sell-your-project form input[type=email]:focus, body.sell-your-project form input[type=url]:focus {
+  outline: none;
+  background: #FEF7E0;
+  color: #AA8800;
+  border-bottom-color: #b49a32;
+}
+body.sell-your-project form input[type=submit] {
+  margin-top: 60px;
+  display: inline-block;
+  line-height: 1.2;
+  background-color: #0066FF;
+  padding: 10px 40px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  text-align: center;
+  border: 7px solid #D5E5FF;
+  box-shadow: inset 0px -1px 0px 0px #0044AA;
+}
+body.sell-your-project form input[type=submit]:hover {
+  background-color: #0064fa;
+  box-shadow: inset 0px -2px 0px 0px #0044AA;
+}
+body.sell-your-project form input[type=submit]:active {
+  background-color: #0060f0;
+  box-shadow: inset 0px 1px 0px 0px #0044AA;
+}
+body.sell-your-project form input[type=submit]:hover {
+  cursor: pointer;
+}
+body.sell-your-project form input[type=submit]:focus {
+  outline: none;
+}
+
+body.success h2 {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 2.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.moderate .actions > * {
+  margin-top: 10px;
+}
+.moderate .project-list {
+  border-bottom: 1px dashed gray;
+}
+.moderate h3 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=admin.css.map */

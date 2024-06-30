@@ -1,0 +1,374 @@
+$vardenYellow: #FEF7E0
+$hotToddyYellow: #AA8800
+$satinSheenGold: #C8AB37
+
+$gray: #808080
+$romanceGray: #FEFEFE
+$magnesiumGray: #B3B3B3
+$whiteSmokeGray: #F6F6F6
+$mineShaftGray: #333
+$concreteGray: #F2F2F2
+$ironGray: #CCCCCC
+
+$crayonBlue: #0066FF
+$hawkesBlue: #D5E5FF
+$cobaltBlue: #0044AA
+$greenVogueBlue: #002255
+
+$SANS_SERIF: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif
+$SERIF: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif
+
+$NARROW_PAGE_WIDTH: 490px
+
+
+@mixin borderlineButton
+  display: inline-block
+  line-height: 1.2
+  background-color: $crayonBlue
+  padding: 10px 40px
+  border-radius: 30px
+  color: white
+  font-size: 1.8rem
+  text-decoration: none
+  text-align: center
+  border: 7px solid $hawkesBlue
+  box-shadow: inset 0px -1px 0px 0px $cobaltBlue
+  &:hover
+    background-color: darken($crayonBlue, 1%)
+    box-shadow: inset 0px -2px 0px 0px $cobaltBlue
+  &:active
+    background-color: darken($crayonBlue, 3%)
+    box-shadow: inset 0px 1px 0px 0px $cobaltBlue
+
+h1, h2, h3, h4, h5, h6, p, li, dd, dt, table, tr, td, blockquote, q, em
+  line-height: 1.35
+
+a
+  color: $crayonBlue
+  &:hover
+    color: darken($crayonBlue, 10%)
+  &:active
+    color: darken($crayonBlue, 20%)
+
+html
+  font: 10px/1.35 sans-serif
+  box-sizing: border-box
+  background-color: $romanceGray
+  color: $mineShaftGray
+  *, *:before, *:after
+    box-sizing: inherit
+
+body
+  margin: 40px auto
+  padding: 0 30px
+  font-size: 1.6rem
+
+header.site-header
+  text-align: center
+  .tagline
+    font: normal 1.3rem/1.5 $SANS_SERIF
+    letter-spacing: 2px
+    word-spacing: 1px
+    em
+      font-size: 1.6rem
+      letter-spacing: 0
+      font-family: $SERIF
+      font-weight: normal
+  .logo
+    margin: 40px 0
+
+footer
+  max-width: $NARROW_PAGE_WIDTH
+  color: #aaa
+  margin: 100px auto
+  font-size: 1.3rem
+  text-align: center
+
+
+.website-preview
+  margin-bottom: 5px
+  border: 3px solid #f0f0f0
+  border-top: 12px solid #f0f0f0
+  border-radius: 2px
+  position: relative
+  height: max-content
+  .buttons
+    span
+      position: absolute
+      display: block
+      z-index: 1
+      top: -8px
+      width: 5px
+      height: 5px
+      border-radius: 100%
+      &:nth-child(1)
+        background: #FFD0D0
+        left: 3px
+      &:nth-child(2)
+        background: #F5DC57
+        left: 13px
+      &:nth-child(3)
+        background: #B3F0A9
+        left: 23px
+  .screenshot
+    line-height: 0
+    overflow-y: scroll
+    max-height: 300px
+    img
+      width: 100%
+
+.project-list
+  margin: 60px auto
+  text-align: left
+  padding: 0
+  list-style: none
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  li
+    font-size: 1.6rem
+    padding: 20px
+    width: 300px
+    margin-bottom: 20px
+    background: #eef5ff
+    border-bottom: 1px solid #e6e6e6
+    p:last-child
+      margin-bottom: 0
+    p.ask
+      font-family: monospace
+      font-size: 1.3rem
+      text-transform: uppercase
+      color: #888
+    h5
+      font-size: 1.6rem
+      font-weight: 600
+      margin: 0
+      .sold
+        background: #f6517b
+        color: white
+        font-size: 1.1rem
+        padding: 3px 11px
+        margin-left: 10px
+        border-radius: 20px
+        font-weight: normal
+        text-decoration: none
+        letter-spacing: .5px
+      a.title
+        color: $crayonBlue
+        text-decoration: none
+        border-bottom: 3px double #77adff
+        &:hover
+          color: #0052cc
+      a.email-owner
+        background: white
+        color: #66a3ff
+        font-size: 1.1rem
+        padding: 2px 10px
+        margin-left: 10px
+        border-radius: 20px
+        font-weight: normal
+        text-decoration: none
+        border: 1px solid #ddeaff
+        &:hover
+          border: 1px solid #bbd6ff
+        &:active
+          background: #004bbb
+          border-color: #004bbb
+          color: white
+
+body.homepage
+  text-align: center
+  .about
+    font-family: $SERIF
+    font-weight: normal
+    font-size: 2.1rem
+    max-width: 480px
+    margin: 0 auto
+  .sell-your-project-cta
+    margin-bottom: 5px
+    margin-top: 30px
+    a
+      +borderlineButton
+  .limited-time
+    font-size: 1.3rem
+    color: $magnesiumGray
+    margin-top: 0
+  .projects-for-sale
+    margin-top: 60px
+    header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      max-width: 550px
+      margin: 0 auto
+      @media (max-width: 500px)
+        display: block
+        .diamond-left, .diamond-right
+          display: none
+    .disclaimer
+      max-width: $NARROW_PAGE_WIDTH
+      margin: 50px auto 20px auto
+      text-align: left
+      font-size: 1.6rem
+      padding: 20px
+      background: #ffc3c3
+      border: 1px solid #ff9090
+      border-radius: 3px
+    .project-list
+      max-width: $NARROW_PAGE_WIDTH
+      margin: 30px auto 60px auto
+      text-align: left
+      padding: 0
+      list-style: none
+      li
+        font-size: 1.6rem
+        padding: 20px
+        margin-bottom: 20px
+        background: #eef5ff
+        border-bottom: 1px solid #e6e6e6
+        p:last-child
+          margin-bottom: 0
+        p.ask
+          font-family: monospace
+          font-size: 1.3rem
+          text-transform: uppercase
+          color: #888
+        h5
+          font-size: 1.6rem
+          font-weight: 600
+          margin: 0
+          a.title
+            color: $crayonBlue
+            text-decoration: none
+            border-bottom: 3px double #77adff
+            &:hover
+              color: #0052cc
+          a.email-owner
+            background: white
+            color: #66a3ff
+            font-size: 1.1rem
+            padding: 2px 10px
+            margin-left: 10px
+            border-radius: 20px
+            font-weight: normal
+            text-decoration: none
+            border: 1px solid #ddeaff
+            &:hover
+              border: 1px solid #bbd6ff
+            &:active
+              background: #004bbb
+              border-color: #004bbb
+              color: white
+  .email-alerts
+    max-width: $NARROW_PAGE_WIDTH
+    margin: 60px auto 80px auto
+    // text-align: left
+    font-size: 1.6rem
+    label
+      font-weight: bold
+    p
+      margin-top: 0
+      color: $gray
+      font-style: italic
+    .wrap
+      margin-top: 10px
+      display: flex
+    input[type=email]
+      font-size: 1.6rem
+      width: 100%
+      padding: 10px
+      background: $vardenYellow
+      color: $hotToddyYellow
+      border: none
+      border-bottom: 1px solid $satinSheenGold
+      margin-right: 4px
+      &:focus
+        outline: none
+    input[type=submit]
+      color: #777
+      background: #eee
+      border: 4px solid #ddd
+      font-size: 1.4rem
+      padding: 0 15px
+      &:hover
+        color: #888
+        cursor: pointer
+        background: #ddd
+        border-color: #d5d5d5
+        border-width: 6px
+        padding: 0 13px
+      &:focus
+        outline: none
+      &:active
+        color: #aaa
+        background: #ccc
+        border-width: 4px
+        border-color: #bbb
+        padding: 0 15px
+        outline: none
+    .success
+      background-color: #adec95
+      color: #21510f
+      padding: 5px 10px
+      font-style: normal
+      margin-top: 10px
+
+body.sell-your-project
+  text-align: center
+  .about
+    font-family: $SERIF
+    font-weight: normal
+    font-size: 2.1rem
+    max-width: 480px
+    margin: 0 auto
+  form
+    max-width: 560px
+    margin: 0 auto
+    color: $mineShaftGray
+    font-size: 1.8rem
+    font-family: $SANS_SERIF
+    margin-top: 50px
+    input, textarea
+      font-size: 1.6rem
+      line-height: 1.4
+      font-family: $SANS_SERIF
+    label
+      display: block
+      font-weight: 500
+      margin: 40px 0 5px
+    textarea, input[type=text], input[type=email], input[type="url"]
+      width: 100%
+      border: none
+      background: $concreteGray
+      border-bottom: 1px solid $ironGray
+      padding: 10px
+      border-radius: 2px
+      &:focus
+        outline: none
+        background: $vardenYellow
+        color: $hotToddyYellow
+        border-bottom-color: darken($satinSheenGold, 5%)
+    input[type=submit]
+      margin-top: 60px
+      +borderlineButton
+      &:hover
+        cursor: pointer
+      &:focus
+        outline: none
+body.success
+  h2
+    font-family: $SERIF
+    font-weight: normal
+    font-size: 2.1rem
+    max-width: 480px
+    margin: 0 auto
+
+.moderate
+  .actions
+    & > * 
+      margin-top: 10px
+  .project-list
+    border-bottom: 1px dashed gray
+  h3
+    text-align: center
+

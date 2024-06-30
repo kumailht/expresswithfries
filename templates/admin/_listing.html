@@ -1,0 +1,25 @@
+<div class="website-preview">
+    <div class="buttons"><span></span><span></span><span></span></div>
+    <div class="screenshot">
+        <img src="/screenshots/listings/{{ listing._id.toLowerCase() }}.jpeg" alt="" />
+    </div>
+</div>
+<h5>
+    <a class="title" href="{{ listing.projectLink }}">
+        {{ listing.projectName }}
+    </a>
+    {% if not listing.sold %}
+    <a class="email-owner" href="mailto:{{ listing.emailAddress }}">
+        Email Owner
+    </a>
+    {% else %}
+    <span class="sold">SOLD</span>
+    {% endif %}
+</h5>
+<p>{{ listing.pitch }}</p>
+<p class="tech-used"><i>Built with:</i> {{ listing.techUsed }}</p>
+<p class="ask">{{ listing.createdAt|relativeDate }}</p>
+<p class="ask">{{ listing.price }}</p>
+<p class="ask">mrr: {{ listing.mrr }}</p>
+<p class="ask">val: {{ listing.valuationReason }}</p>
+<p class="ask"><a target="_blank" href="/moderate/{{ listing._id }}/screenshots/">supporting screenshots</a>: {% if listing.supportingScreenshots %}{{ listing.supportingScreenshots.length }}{% else %}0{% endif %}</p>

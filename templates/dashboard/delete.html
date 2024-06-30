@@ -1,0 +1,18 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Account{% endblock %}
+{% block nav_selected %}{% endblock %}
+
+{% block body_content %}
+
+<h1 class="text-3xl mt-12 font-bold text-red-700">Delete My Account</h1>
+<p class="text-slate-600 mt-4 mb-12">
+    We cannot recover any details after you press delete. It will literally delete your info from our systems, poof. Press with care.
+</p>
+
+<form action="/dashboard/delete" method="post">
+    <span class="font-bold">(CLICKING THIS BUTTON WILL DELETE EVERYTHING)</span> &nbsp;
+    <button class="bg-red-500 text-white p-2 px-4 rounded-md">DELTE MY ACCOUNT FOREVER</button>
+</form>
+
+{% endblock %}

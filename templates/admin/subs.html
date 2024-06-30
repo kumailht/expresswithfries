@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="/img/favicon.ico" />
+
+        <title>Borderline</title>
+    </head>
+
+    <body>
+        <div style="display: flex">
+            <div style="clear: both; background: rgb(236, 250, 255); padding: 8px 40px;">
+                <h3 style="font: 20px monospace">ACCOUNTS ({{users.length}})</h3>
+                <div>
+                    {% for user in users %}
+                    <div style="display:flex; gap: 30px; margin: 4px 0px; font: 11px monospace;">
+                        <div style="width: 100px">
+                            {{ user.createdAt|dateToMonthYear }}
+                        </div>
+                        <div style="width: 100px">
+                            {{ user.createdAt|relativeDate }}
+                        </div>
+                        <div style="width: 300px">
+                            {{ user.email }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div style="clear: both; background: #f0f0f0; padding: 8px 40px;">
+                <h3 style="font: 20px monospace">SUBS ({{subs.length}})</h3>
+                <div>
+                    {% for user in subs %}
+                    <div style="display:flex; gap: 30px; margin: 4px 0; font: 11px monospace;">
+                        <div style="width: 100px">
+                            {{ user.createdAt|dateToMonthYear }}
+                        </div>
+                        <div style="width: 100px">
+                            {{ user.createdAt|relativeDate }}
+                        </div>
+                        <div style="width: 300px">
+                            {{ user.email }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

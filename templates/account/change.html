@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body_class %}{% endblock %}
+
+{% block body_content %}
+	<div class="brick auth">
+		<div class="wrap">
+			<h1>Change password</h1>
+		
+			{% if status === "success" %}
+				<p>Password changed successfully. <a href="/account/">My account</a></p>
+			{% else %}
+				{% if errors %}
+					{% for error in errors %}
+						  <p>{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+		
+				<form method="post">
+					<label>current password</label><input name="password" type="password" autocomplete="off" required><br>
+					<label>password</label><input name="new_password" type="password" autocomplete="off" required><br>
+					<label>password (repeat)</label><input name="repeat_new_password" type="password" autocomplete="off" required><br>
+		
+					<button type="submit">change</button>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
